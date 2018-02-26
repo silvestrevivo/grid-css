@@ -1,0 +1,32 @@
+{
+  "name": "grid-css",
+  "version": "1.0.0",
+  "description": "Grid CSS project developed following the Udemy Tutorial from @jonasschmedtmann",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --out-dir build/ --public-url ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/silvestrevivo/grid-css.git"
+  },
+  "keywords": [
+    "display",
+    "grid",
+    "css"
+  ],
+  "author": "@silvestrevivo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/silvestrevivo/grid-css/issues"
+  },
+  "homepage": "https://github.com/silvestrevivo/grid-css#readme",
+  "dependencies": {
+    "node-sass": "^4.7.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^8.0.0",
+    "postcss-modules": "^1.1.0"
+  }
+}
