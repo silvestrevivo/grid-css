@@ -4,17 +4,33 @@
     background-color: $col-primary;
     grid-column: full-start / col-end 4;
     background-image: linear-gradient(rgba($col-primary, .5), rgba($col-primary, .3)), url('../img/back.jpg');
+    background-size: cover;
 
     display: grid;
     grid-template-rows: repeat(6, 1fr);
     grid-template-columns: repeat(6, 1fr);
     align-items: center;
+
+    @include respond(phone){
+      grid-column: 1 / -1;
+      grid-row: 6 / 7;
+    }
   }
 
   &__img--1{
     grid-row: 2 / 6;
     grid-column: 2 / 6;
     box-shadow: 0 2rem 5rem rgba(#000, .4);
+
+    @include respond(tab-port){
+      grid-column: 1 / 4;
+      grid-row: 1 / -1;
+      height: 50%;
+      width: auto;
+    }
+    @include respond(phone){
+      height: 100%;
+    }
   }
 
   &__img--2{
@@ -24,6 +40,14 @@
     transform-origin: 0;
     z-index: 10;
     box-shadow: 0 2rem 5rem rgba(#000, .4);
+    @include respond(tab-port){
+      height: 50%;
+      grid-row: 1 / -1;
+      transform: scale(1);
+    }
+    @include respond(phone){
+      height: 100%;
+    }
   }
 
   &__content{
@@ -40,6 +64,11 @@
     align-content: center;
     justify-items: center;
     // with grid is less lines of code
+
+    @include respond(phone){
+      grid-column: 1 / -1;
+      grid-row: 5 / 6;
+    }
   }
 
   &__text{

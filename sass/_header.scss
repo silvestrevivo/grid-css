@@ -9,10 +9,14 @@
   padding: 4rem;
 
   display: grid;
-  grid-template-rows: 1fr min-content 6rem 1fr;
-  grid-template-columns: max-content;
+  grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr;
+  grid-template-columns: minmax(min-content, max-content);
   grid-row-gap: 1.5rem;
   justify-content: center;
+
+  @include respond(phone){
+    grid-column: 1 / -1;
+  }
 
   &__logo{
     height: 3rem;
@@ -42,9 +46,10 @@
     grid-template-columns: repeat(4, 1fr);
     grid-column-gap: .5rem;
     justify-items: center;
+    align-items: center;
 
     img{
-      height: 2.2rem;
+      max-height: 2.2rem;
       filter: brightness(70%);
     }
   }

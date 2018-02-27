@@ -33,18 +33,18 @@ html{
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: subpixel-antialiased;
 
-  // @include respond(big-destop){
-  //   font-size: 70%; // 1rem = 12px, 12 / 16 = 75%
-  // }
-  // @include respond(tab-land){
-  //     font-size: 56.25%; // 1rem = 9px, 9 / 16 = 56.25%
-  // }
-  // @include respond(tab-port){
-  //     font-size: 50%; // 1rem = 8px, 8 / 16 = 50%
-  // }
-  // @include respond(phone){
-  //     font-size: 43.75%; // 1rem = 7px, 7 / 16 = 43,75%
-  // }
+  @include respond(big-destop){
+    font-size: 70%; // 1rem = 12px, 12 / 16 = 75%
+  }
+  @include respond(tab-land){
+    font-size: 56.25%; // 1rem = 9px, 9 / 16 = 56.25%
+  }
+  @include respond(tab-port){
+    font-size: 50%; // 1rem = 8px, 8 / 16 = 50%
+  }
+  @include respond(phone){
+    font-size: 43.75%; // 1rem = 7px, 7 / 16 = 43,75%
+  }
 
   // Thus design is done by default 1200-1800 px. Queries are for other
   // sizes. To check them => http://sizzy.co/
@@ -128,4 +128,13 @@ body{
   display: grid;
   grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
   grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(3rem, 1fr) [center-start]repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(3rem, 1fr) [full-end];
+
+  @include respond(tab-port){
+    grid-template-rows: 6rem 80vh min-content min-content repeat(3, min-content);
+    grid-template-columns: [full-start] minmax(3rem, 1fr) [center-start]repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(3rem, 1fr) [full-end];
+  }
+
+  @include respond(phone){
+    grid-template-rows: 6rem calc(100vh - 6rem) min-content min-content min-content repeat(3, min-content);
+  }
 }

@@ -7,9 +7,19 @@
   grid-template-rows: 1fr repeat(3, min-content) 1fr;
   grid-gap: 1.5rem;
 
+  @include respond(phone){
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: min-content 1fr;
+    padding: 2rem;
+  }
+
   .heading-3{
     align-self: end;
     justify-self: center;
+    @include respond(phone){
+      grid-column: 1 / -1;
+    }
   }
 
   &__list{
